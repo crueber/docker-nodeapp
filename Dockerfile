@@ -40,4 +40,5 @@ COPY --from=build /app /app
 COPY sv /etc/service 
 ARG BUILD_INFO
 LABEL BUILD_INFO=$BUILD_INFO
+CMD bash -c 'export > /etc/envvars && /usr/sbin/runsvdir-start'
 
